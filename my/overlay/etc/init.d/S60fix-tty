@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" != "start" ]; then
+	exit
+fi
+
+tty=`cat /proc/cmdline | tr ' ' '\n' | egrep -m1 "^console=" | cut -d '=' -f2 | cut -d ',' -f1`
+
+ln -fs /dev/$tty /dev/ttyMY
+echo "/dev/$tty linked to /dev/ttyMY - using as console"
+
