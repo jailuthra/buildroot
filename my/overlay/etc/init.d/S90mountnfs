@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$1" != "start" ]; then
+	umount /root/nfs/work
+	umount /root
+	exit
+fi
+
+serverip=`cat /proc/mounts | grep /nfs/rootfs | egrep -o ",addr=[^ ]+" | cut -d = -f 2`
+
+echo Mounting root home
+mount -o nolock $serverip:/home/tomba/work/buildroot/roothome /root
+
+echo Mounting work
+mkdir -p /root/nfs
+mkdir -p /root/nfs/work
+mount -o nolock $serverip:/home/tomba/work /root/nfs/work
+
+#echo Symlink kernel dir to /lib/modules/$(uname -r)
+#mkdir -p /lib/modules
+#ln -nfs /root/nfs/work/linux /lib/modules/$(uname -r)
+
