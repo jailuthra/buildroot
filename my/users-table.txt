@@ -1,2 +1,2 @@
-tomba 1000 tomba 1000 !=blabla /home/tomba /bin/sh - -
+darkapex 1000 darkapex 1000 !=blabla /home/darkapex /bin/sh - -
 

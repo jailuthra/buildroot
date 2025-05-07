@@ -2,8 +2,8 @@
 
 set -e
 
-ROOTFS=/home/tomba/nfs/rootfs64.buildroot
-ROOTFS_TAR=../output64/images/rootfs.tar.gz
+ROOTFS=/srv/nfs/buildroot
+ROOTFS_TAR=/home/darkapex/git/buildroot/output/images/rootfs.tar.gz
 
 if [ ! -f $ROOTFS_TAR ]; then
 	echo no $ROOTFS_TAR
