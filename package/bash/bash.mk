@@ -20,6 +20,7 @@ BASH_CONF_OPTS = \
 BASH_CONF_ENV = \
 	ac_cv_rl_prefix="$(STAGING_DIR)" \
 	ac_cv_rl_version="$(READLINE_VERSION)" \
+	CFLAGS="$(TARGET_CFLAGS) -std=gnu17" \
 	bash_cv_getcwd_malloc=yes \
 	bash_cv_job_control_missing=present \
 	bash_cv_sys_named_pipes=present \
